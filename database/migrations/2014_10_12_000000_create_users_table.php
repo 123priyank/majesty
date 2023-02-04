@@ -15,13 +15,30 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('full_name');
+            $table->string('enagic_email')->unique();
             $table->string('contact_number');
+            $table->string('alternative_contact_number');
+            $table->string('blood_group');
+            $table->date('birth_date');
+            $table->date('date_of_birth_spouse');
+            $table->date('anniversary_date');
+            $table->string('home_address');
+            $table->string('country');
+            $table->string('district');
+            $table->string('state');
+            $table->string('city');
+            $table->integer('status');
+            $table->integer('profile_status');
             $table->string('role');
             $table->string('profile_pic');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('enagic_id_no');
+            $table->string('enagic_sponser_name');
+            $table->string('enagic_sponser_id');
+            $table->string('device_mode');
+            $table->date('joining_date');
             $table->rememberToken();
             $table->timestamps();
 

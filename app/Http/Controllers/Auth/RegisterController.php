@@ -49,8 +49,8 @@ class RegisterController extends Controller
     {
 
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'full_name' => ['required', 'string', 'max:255'],
+            'enagic_email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'contact_number' => ['required','min:10','max:10'],
             'profile_pic' => ['mimes:jpeg,jpg,png,gif|max:10000'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -69,9 +69,25 @@ class RegisterController extends Controller
 
         $request = request();
 
-        $data['name'] = $request->name;
-        $data['email'] = $request->email;
+        $data['full_name'] = $request->full_name;
+        $data['enagic_email'] = $request->enagic_email;
         $data['contact_number'] = $request->contact_number;
+        $data['alternative_contact_number'] = $request->alternative_contact_number;
+        $data['birth_date'] = $request->birth_date;
+        $data['blood_group'] = $request->blood_group;
+        $data['date_of_birth_spouse'] = $request->date_of_birth_spouse;
+        $data['anniversary_date'] = $request->anniversary_date;
+        $data['home_address'] = $request->home_address;
+        $data['district'] = $request->district;
+        $data['state'] = $request->state;
+        $data['country'] = $request->country;
+        $data['city'] = $request->city;
+        $data['enagic_id_no'] = $request->enagic_id_no;
+        $data['enagic_sponser_name'] = $request->enagic_sponser_name;
+        $data['enagic_sponser_id'] = $request->enagic_sponser_id;
+        $data['device_mode'] = $request->device_mode;
+        $data['joining_date'] = $request->joining_date;
+        $data['status'] = 1;
         $data['role'] = 'user';
         $data['password'] = Hash::make($data['password']);
         if ($request->hasFile("profile_pic")) {

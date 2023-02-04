@@ -18,10 +18,26 @@ class User extends Authenticatable
      */
     protected $table='users';
     protected $fillable = [
-        'name',
-        'email',
+        'full_name',
+        'enagic_email',
         'password',
         'contact_number',
+        'alternative_contact_number',
+        'birth_date',
+        'blood_group',
+        'date_of_birth_spouse',
+        'anniversary_date',
+        'home_address',
+        'district',
+        'country',
+        'state',
+        'city',
+        'status',
+        'enagic_id_no',
+        'enagic_sponser_name',
+        'enagic_sponser_id',
+        'device_mode',
+        'joining_date',
         'role',
         'profile_pic'
     ];
